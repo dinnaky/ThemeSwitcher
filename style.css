@@ -1,0 +1,81 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+	--dark: #292C35;
+	--light: #F1F1F1;
+	--label: #111;
+}
+
+body {
+    background-color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 1s;
+}
+
+
+.light-mode {
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 1s;
+}
+
+.switch button{
+    left: 6px;
+    width: 70px;
+    height: 70px;
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: slide-back .2s;
+}
+
+.light-mode .switch button {
+    animation: slide-in .1s forwards;
+}
+
+.switch {
+    position: relative;
+    display: flex;
+}
+
+span {
+    background-color: var(--label);
+    display: block;
+    width: 235px;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 50px;
+}
+  
+
+@keyframes slide-in {
+    from {
+        left: 6px;
+    }
+
+    to {
+        left: 68%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 68%;
+    }
+
+    to {
+        left: 6px;
+    }
+}
